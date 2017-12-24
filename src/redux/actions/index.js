@@ -1,6 +1,5 @@
 import Help from '../../utils/help'
 import $ from 'jquery'
-//const {dispatch}=window.store;
 const _getMusics=(url)=>{
     return function(dispatch){
         $.ajax({
@@ -12,7 +11,6 @@ const _getMusics=(url)=>{
             jsonpCallback: "JsonCallback",
             scriptCharset: 'GBK',//设置编码，否则会乱码
             success: function(data) {
-              console.log(JSON.stringify(data))
               dispatch({
                  type:'GET-MUSICLIST',
                  payload:data

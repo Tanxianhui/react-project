@@ -16,7 +16,7 @@ module.exports = {
 　　　　　　同时链式loader(用!连接)只适用于module.loader，
 　　　　　　同时-loader不可省略 */
         rules: [{
-            test: /\.css$/,
+            test: /\.(scss|css)$/,
             use: [
                 'style-loader', {
                     loader: 'css-loader',
@@ -33,9 +33,10 @@ module.exports = {
                             ];
                         }
                     }
-                }
+                },'sass-loader'
             ]
-        }, {
+        }
+        , {
             test: /\.styl(us)?$/,
             use: [
                 'style-loader', 'css-loader', {
@@ -55,6 +56,12 @@ module.exports = {
             use: ['babel-loader'],
             exclude: /node_modules/,
             include: path.join(__dirname, 'src')
+        },
+        {
+            test:/\.(png|jpg)$/,
+            use:[
+                'url-loader'
+            ]
         }
     ]
     }

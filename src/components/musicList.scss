@@ -1,0 +1,50 @@
+
+// 变量声明
+$fontSize:14px;
+$fontColor:#333;
+
+ul{
+    list-style: none;
+    font-size: $fontSize;
+    color: $fontColor;
+    padding-right: 100px;
+
+    li{
+        height: 80px;
+        line-height: 80px;
+        
+        div{
+            display: inline-block
+        }
+        .musicName{
+            width: 72%;
+            &::before{
+                content: ' ';
+                background: url('../static/music.png') no-repeat;
+                width: 20px;
+                height: 20px;
+                background-size: cover;
+                display: inline-block;
+                vertical-align: middle;
+                margin-right: 15px;
+            }
+
+            .musicOpreateIcons{
+                background: url('../static/music_disc.png') no-repeat;
+                background-size: cover;
+                display: inline-block;
+                width:20px;
+                height: 20px;
+                margin-left: 50px;
+                vertical-align: middle;
+                cursor: pointer;
+            }
+        }
+        .musicAuthor{
+            width: 25%
+        }
+        .musicTimeSpan{
+            width: 3%
+        }
+    }
+}

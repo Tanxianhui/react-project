@@ -11,9 +11,10 @@ import reducers from './redux/reducers/index'
 import { createStore, applyMiddleware } from "redux";
 import Home from './containers/home';
 import thunk from 'redux-thunk';
+import $ from 'jquery'
 
 const store=createStore(reducers,applyMiddleware(thunk));
-window.store=store;
+
 const App=class extends React.Component{
     constructor(props){
         super(props);
