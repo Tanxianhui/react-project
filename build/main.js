@@ -24540,7 +24540,14 @@ var MusicItem = function (_React$Component) {
             var sec = parseInt(obj.playtime / 60);
             var sec_str = sec < 10 ? '0' + sec : sec;
             obj.timeSpan = sec_str + ':' + obj.playtime % 60;
+            obj.url = 'http://dl.stream.qqmusic.qq.com/C400003a0mEj1ljBv5.m4a?vkey=1265ADEBCDF6DC134E053D88CCE86E3B1E86E30CC885D1E4BEE8E05A0D1BD9D63A568D736537B706E749D0F956DB375EDF46BAA34ED2E941&guid=6765947072&uin=0&fromtag=66';
             this.formatProps = obj;
+        }
+    }, {
+        key: 'playMusic',
+        value: function playMusic(event) {
+            var musicDom = event.target.nextSibling;
+            musicDom.play();
         }
     }, {
         key: 'render',
@@ -24552,7 +24559,7 @@ var MusicItem = function (_React$Component) {
                     'div',
                     { className: 'musicName' },
                     this.formatProps.songName,
-                    _react2.default.createElement('i', { className: 'musicOpreateIcons' }),
+                    _react2.default.createElement('i', { className: 'musicOpreateIcons', onClick: this.playMusic.bind(this) }),
                     _react2.default.createElement('audio', { src: this.formatProps.url })
                 ),
                 _react2.default.createElement(

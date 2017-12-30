@@ -1,6 +1,6 @@
 import Help from '../../utils/help'
 import $ from 'jquery'
-const _getMusics=(url)=>{
+export function _getMusics(url){
     return function(dispatch){
         $.ajax({
             type: "get",
@@ -22,5 +22,3 @@ const _getMusics=(url)=>{
           });
     }
 }
-
-export {_getMusics}
